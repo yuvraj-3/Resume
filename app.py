@@ -42,6 +42,12 @@ with st.expander("Click to read more about me"):
         I'm always building something new and love working on intelligent systems that actually make a difference.
         """
     )
+    st.download_button(
+        label="📄 Download Resume (PDF)",
+        data=open("Yuvraj_Kumar_AL150.pdf", "rb").read(),
+        file_name="Yuvraj_Kumar_Resume.pdf",
+        mime="application/pdf"
+    )
 
 # --- Projects Section ---
 st.markdown("## 💼 Projects")
@@ -61,6 +67,7 @@ with col2:
     st.image("frontend.png", use_container_width=True, caption="Movie Recommendation")
 
 st.markdown("🔗 [View All Projects on GitHub](https://github.com/yuvraj-3/Projects)")
+
 # --- Contact Me ---
 st.markdown("---")
 st.markdown("## 📫 Contact Me")
