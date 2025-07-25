@@ -19,6 +19,10 @@ def add_bg_from_local(img_path):
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
+        color: white;
+    }}
+    .block-container {{
+        padding: 3rem 2rem 2rem;
     }}
     </style>
     """
@@ -26,77 +30,83 @@ def add_bg_from_local(img_path):
 
 add_bg_from_local("back.jpg")
 
-# --- Sidebar ---
-# --- Sidebar ---
-with st.sidebar:
-    st.markdown(
-        """
-        <style>
-        .sidebar-content {
-            text-align: center;
-            padding-top: 20px;
-        }
-        .sidebar-content img {
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-        .sidebar-links a {
-            display: block;
-            margin: 5px 0;
-            font-weight: 500;
-            color: #4a4a4a;
-            text-decoration: none;
-        }
-        .sidebar-links a:hover {
-            color: #1f77b4;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
-    st.image("https://avatars.githubusercontent.com/u/101135865?v=4", width=120)
-    st.markdown("### Yuvraj Kumar")
-    st.markdown("Final-year CSE (AI/ML) Student")
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    st.markdown('<div class="sidebar-links">', unsafe_allow_html=True)
-    st.markdown("[💻 GitHub](https://github.com/yuvraj-3)", unsafe_allow_html=True)
-    st.markdown("[🔗 LinkedIn](https://www.linkedin.com/in/yuvraj5400/)", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    st.markdown("### 📄 Resume")
-    st.download_button(
-        label="Download Resume",
-        data=open("Yuvraj_Kumar_AL150.pdf", "rb").read(),
-        file_name="Yuvraj_Kumar_Resume.pdf",
-        mime="application/pdf"
-    )
-
-# --- Main Content ---
-st.title("👋 Hi, I'm Yuvraj Kumar ")
+# --- Header ---
+st.title("👋 Hi, I'm Yuvraj Kumar")
 st.markdown("Final-year **CSE (AI/ML)** student • Building intelligent systems and cool projects")
 
-st.markdown("## 📖 About Me")
+# --- Resume Download Button ---
+with open("Yuvraj_Kumar_AL150.pdf", "rb") as file:
+    resume_data = file.read()
+st.download_button(
+    label="📄 Download Resume (PDF)",
+    data=resume_data,
+    file_name="Yuvraj_Kumar_Resume.pdf",
+    mime="application/pdf"
+)
+
+# --- About Me Section ---
+st.markdown("## 🧠 About Me")
 st.write(
     "I'm a passionate machine learning and computer vision enthusiast. "
     "I enjoy solving real-world problems, experimenting with intelligent systems, and turning ideas into working prototypes."
 )
 
+# --- Projects Section ---
 st.markdown("## 💼 Projects")
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("📹 Cinevo‑AI Object Detection")
+    st.image("obj.jpg", use_container_width=True)
     st.write("YOLOv5-based Streamlit app for detecting objects in images, videos, and webcam.")
 
 with col2:
     st.subheader("🎬 Movie Recommendation System")
+    st.image("frontend.png", use_container_width=True)
     st.write("Python ML project combining collaborative and content-based filtering to recommend movies.")
 
 st.markdown("🔗 [View All Projects on GitHub](https://github.com/yuvraj-3/Projects)")
 
+# --- Contact Me Section ---
+st.markdown("## 📬 Contact Me")
+
+st.markdown(
+    """
+    <style>
+    .contact-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+    }
+    .contact-box a {
+        color: #00CED1;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .contact-box a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class='contact-box'>
+        <p>Feel free to reach out to me:</p>
+        <ul>
+            <li>📧 <a href='mailto:yuvrajkumarsingh303@gmail.com'>yuvrajkumarsingh303@gmail.com</a></li>
+            <li>🔗 <a href='https://www.linkedin.com/in/yuvraj5400/' target='_blank'>LinkedIn</a></li>
+            <li>💻 <a href='https://github.com/yuvraj-3' target='_blank'>GitHub</a></li>
+        </ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# --- Footer ---
 st.markdown("---")
 st.write("Made with ❤️ using [Streamlit](https://streamlit.io)")
