@@ -19,10 +19,6 @@ def add_bg_from_local(img_path):
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
-        color: white;
-    }}
-    .block-container {{
-        padding: 3rem 2rem 2rem;
     }}
     </style>
     """
@@ -34,22 +30,18 @@ add_bg_from_local("back.jpg")
 st.title("👋 Hi, I'm Yuvraj Kumar")
 st.markdown("Final-year **CSE (AI/ML)** student • Building intelligent systems and cool projects")
 
-# --- Resume Download Button ---
-with open("Yuvraj_Kumar_AL150.pdf", "rb") as file:
-    resume_data = file.read()
-st.download_button(
-    label="📄 Download Resume (PDF)",
-    data=resume_data,
-    file_name="Yuvraj_Kumar_Resume.pdf",
-    mime="application/pdf"
-)
-
 # --- About Me Section ---
-st.markdown("## 🧠 About Me")
-st.write(
-    "I'm a passionate machine learning and computer vision enthusiast. "
-    "I enjoy solving real-world problems, experimenting with intelligent systems, and turning ideas into working prototypes."
-)
+st.markdown("## 📖 About Me")
+with st.expander("Click to read more about me"):
+    st.markdown(
+        """
+        Hi, I'm Yuvraj Kumar Singh — a final-year B.Tech student in Computer Science with a specialization in Artificial Intelligence and Machine Learning, currently studying at **LNCTE, Bhopal (Madhya Pradesh)**.
+
+        I was born and brought up in **Patna, Bihar**, and have always been curious about how machines think. My journey into programming began with C++, and over time I’ve grown passionate about solving real-world problems with AI, ML, and computer vision.
+
+        I'm always building something new and love working on intelligent systems that actually make a difference.
+        """
+    )
 
 # --- Projects Section ---
 st.markdown("## 💼 Projects")
@@ -58,50 +50,27 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("📹 Cinevo‑AI Object Detection")
-    st.image("obj.jpg", use_container_width=True)
     st.write("YOLOv5-based Streamlit app for detecting objects in images, videos, and webcam.")
+    st.markdown("[🔗 View Project](https://github.com/yuvraj-3/Projects)", unsafe_allow_html=True)
+    st.image("obj.png", use_container_width=True, caption="Object Detection System")
 
 with col2:
     st.subheader("🎬 Movie Recommendation System")
-    st.image("frontend.png", use_container_width=True)
     st.write("Python ML project combining collaborative and content-based filtering to recommend movies.")
+    st.markdown("[🔗 View Project](https://github.com/yuvraj-3/Projects)", unsafe_allow_html=True)
+    st.image("frontend.png", use_container_width=True, caption="Movie Recommendation")
 
 st.markdown("🔗 [View All Projects on GitHub](https://github.com/yuvraj-3/Projects)")
-
-# --- Contact Me Section ---
-st.markdown("## 📬 Contact Me")
-
-st.markdown(
-    """
-    <style>
-    .contact-box {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-    }
-    .contact-box a {
-        color: #00CED1;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .contact-box a:hover {
-        text-decoration: underline;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# --- Contact Me ---
+st.markdown("---")
+st.markdown("## 📫 Contact Me")
 
 st.markdown(
     """
-    <div class='contact-box'>
-        <p>Feel free to reach out to me:</p>
-        <ul>
-            <li>📧 <a href='mailto:yuvrajkumarsingh303@gmail.com'>yuvrajkumarsingh303@gmail.com</a></li>
-            <li>🔗 <a href='https://www.linkedin.com/in/yuvraj5400/' target='_blank'>LinkedIn</a></li>
-            <li>💻 <a href='https://github.com/yuvraj-3' target='_blank'>GitHub</a></li>
-        </ul>
+    <div style='font-size:16px; line-height:2'>
+        📧 <a href="mailto:yuvrajkumarsingh303@gmail.com">yuvrajkumarsingh303@gmail.com</a><br>
+        🔗 <a href="https://github.com/yuvraj-3" target="_blank">GitHub</a><br>
+        🔗 <a href="https://www.linkedin.com/in/yuvraj5400/" target="_blank">LinkedIn</a>
     </div>
     """,
     unsafe_allow_html=True
