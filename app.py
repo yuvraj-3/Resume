@@ -1,50 +1,59 @@
 import streamlit as st
 
-# Page config
+# --- Page config ---
 st.set_page_config(
-    page_title="Yuvraj's Resume",
+    page_title="Yuvraj Kumar | Resume",
     page_icon="🧠",
-    layout="wide",
+    layout="wide"
 )
 
-# Sidebar
+# --- Sidebar ---
 with st.sidebar:
-    st.image("https://avatars.githubusercontent.com/u/101135865?v=4", width=150)  # Your GitHub profile pic
+    st.image("https://avatars.githubusercontent.com/u/101135865?v=4", width=150)
     st.title("Yuvraj Kumar")
-    st.markdown("**Final-year CSE (AI/ML)**")
+    st.markdown("Final-year CSE (AI/ML) Student")
     st.write("📍 Patna, Bihar")
-    st.markdown("📧 yuvrajkumarsingh303@gmail.com")
-    st.markdown("🔗 [GitHub](https://github.com/yuvraj-3)")
-    st.markdown("🔗 [LinkedIn](https://www.linkedin.com/in/yuvraj5400/)")
-    st.download_button("📄 Download Resume (PDF)", "Resume.pdf", file_name="c:\Users\yuvra\OneDrive\Desktop\gitdemo\Resume\Yuvraj_Kumar_AL150.pdf")
+    st.write("📧 yuvrajkumarsingh303@gmail.com")
+    st.markdown("[🔗 GitHub](https://github.com/yuvraj-3)")
+    st.markdown("[🔗 LinkedIn](https://www.linkedin.com/in/yuvraj5400/)")
+    st.download_button(
+        label="📄 Download Resume (PDF)",
+        data=open("Yuvraj_Kumar_AL150.pdf", "rb").read(),
+        file_name="Yuvraj_Kumar_Resume.pdf",
+        mime="application/pdf"
+    )
 
-# Main title
-st.title("📝 Yuvraj's Interactive Resume")
-st.markdown("Welcome! This is a minimal interactive version of my resume built using **Streamlit**.")
+# --- Main Section ---
+st.title("👋 Hi, I'm Yuvraj Kumar Singh")
+st.markdown("Final-year **CSE (AI/ML)** student • Building intelligent systems and cool projects")
 
-# About Me
-st.header("👨‍🎓 About Me")
-st.info("Final-year B.Tech student in Computer Science (AI/ML) at DAV Public School. Passionate about machine learning, computer vision, and building cool stuff that works.")
+st.markdown("## 📖 About Me")
+st.write(
+    "I'm a passionate machine learning and computer vision enthusiast, currently pursuing B.Tech in Computer Science "
+    "with specialization in AI & ML. I love solving real-world problems with code and always strive to learn new tech."
+)
 
-# Projects
-st.header("💼 Projects")
+st.markdown("## 💼 Projects")
 
-st.subheader("📹 Cinevo-AI Object Detection")
-st.write("YOLOv5-based Streamlit app for detecting objects in images, videos, and webcam streams. Supports local inference without GPU.")
+col1, col2 = st.columns(2)
 
-st.subheader("🎬 Movie Recommendation System")
-st.write("Machine learning-based recommendation engine using collaborative and content-based filtering with Scikit-learn and Pandas.")
+with col1:
+    st.subheader("📹 Cinevo‑AI Object Detection")
+    st.write("YOLOv5-based Streamlit app for detecting objects in images, videos, and webcam. Supports local CPU inference.")
 
-# Education
-st.header("🎓 Education")
+with col2:
+    st.subheader("🎬 Movie Recommendation System")
+    st.write("Python ML project combining collaborative and content-based filtering to recommend personalized movies.")
+
+st.markdown("🔗 [View All Projects on GitHub](https://github.com/yuvraj-3/Projects)")
+
+st.markdown("## 🎓 Education")
 st.write("**DAV Public School**")
 st.write("B.Tech in Computer Science – Artificial Intelligence & Machine Learning")
 
-# Certifications
-st.header("📜 Certifications")
+st.markdown("## 📜 Certifications")
 st.markdown("- **CCNA: Introduction to Networks** – Cisco")
 st.markdown("- **Data Science BootCamp** – GeeksforGeeks")
 
-# Footer/End
 st.markdown("---")
-st.write("Built with ❤️ using [Streamlit](https://streamlit.io)")
+st.write("Made with ❤️ using [Streamlit](https://streamlit.io)")
