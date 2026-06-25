@@ -59,8 +59,8 @@ for col, (title, subtitle) in zip((c1, c2, c3), stats):
 st.markdown("## 👨‍💻 About Me")
 st.markdown("""
 <div class="card">
-I'm <b>Yuvraj Kumar Singh</b>, 
-            I'm Yuvraj Kumar Singh, a Computer Science graduate specializing in Artificial Intelligence and Machine Learning.
+I'm <b>Yuvraj Kumar </b>, 
+            a Computer Science graduate specializing in Artificial Intelligence and Machine Learning.
             I enjoy building practical AI applications using Python, FastAPI, Machine Learning, and Computer Vision, 
             and I'm currently looking for opportunities where I can continue learning while contributing to real-world projects.
 </div>
