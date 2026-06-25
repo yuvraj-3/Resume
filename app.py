@@ -1,88 +1,167 @@
+
 import streamlit as st
 import base64
 
-# --- Page Config ---
-st.set_page_config(
-    page_title="Yuvraj Kumar | Resume",
-    page_icon="🧠",
-    layout="wide"
-)
+st.set_page_config(page_title="Yuvraj Kumar | Portfolio", page_icon="🧠", layout="wide")
 
-# --- Background Image ---
-def add_bg_from_local(img_path):
-    with open(img_path, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode()
-    css_code = f"""
+def load_css():
+    with open("style.css","r",encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+def add_bg(img_path):
+    with open(img_path,"rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+    st.markdown(f"""
     <style>
     .stApp {{
-        background-image: url("data:image/jpg;base64,{encoded_string}");
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
+        background-image:url("data:image/jpg;base64,{encoded}");
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
     }}
     </style>
-    """
-    st.markdown(css_code, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-add_bg_from_local("back.jpg")
+load_css()
+add_bg("back.jpg")
 
-# --- Header ---
-st.title("👋 Hi, I'm Yuvraj Kumar")
-st.markdown("Final-year **CSE (AI/ML)** student • Building intelligent systems and cool projects")
+st.markdown("""
+<div class="hero">
 
-# --- About Me Section ---
-st.markdown("## 📖 About Me")
-with st.expander("Click to read more about me"):
-    st.markdown(
-        """
-        Hi, I'm Yuvraj Kumar Singh — a final-year B.Tech student in Computer Science with a specialization in Artificial Intelligence and Machine Learning, currently studying at **LNCTE, Bhopal (Madhya Pradesh)**.
+<h4>👋 Hello, I'm</h4>
 
-        I was born and brought up in **Patna, Bihar**, and have always been curious about how machines think. My journey into programming began with C++, and over time I’ve grown passionate about solving real-world problems with AI, ML, and computer vision.
+<h1>Yuvraj <span>Kumar</span></h1>
 
-        I'm always building something new and love working on intelligent systems that actually make a difference.
-        """
-    )
-    st.download_button(
-        label="📄 Download Resume (PDF)",
-        data=open("Yuvraj_Kumar_AL150.pdf", "rb").read(),
-        file_name="Yuvraj_Kumar_Resume.pdf",
-        mime="application/pdf"
-    )
+<h3>B.Tech CSE (AI & ML) Graduate • Python Developer • Machine Learning Enthusiast</h3>
 
-# --- Projects Section ---
-st.markdown("## 💼 Projects")
+</div>
+""", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+c1, c2, c3 = st.columns(3)
 
-with col1:
-    st.subheader("📹 Cinevo‑AI Object Detection")
-    st.write("YOLOv5-based Streamlit app for detecting objects in images, videos, and webcam.")
-    st.markdown("[🔗 View Project](https://github.com/yuvraj-3/Projects)", unsafe_allow_html=True)
-    st.image("obj.png", use_container_width=True, caption="Object Detection System")
+stats = [
+    ("B.Tech", "Graduate"),
+    ("Python", "Primary Language"),
+    ("AI/ML", "Specialization"),
+]
 
-with col2:
-    st.subheader("🎬 Movie Recommendation System")
-    st.write("Python ML project combining collaborative and content-based filtering to recommend movies.")
-    st.markdown("[🔗 View Project](https://github.com/yuvraj-3/Projects)", unsafe_allow_html=True)
-    st.image("frontend.png", use_container_width=True, caption="Movie Recommendation")
+for col, (title, subtitle) in zip((c1, c2, c3), stats):
+    with col:
+        st.markdown(
+            f"""
+            <div class="stat">
+                <h2>{title}</h2>
+                <p>{subtitle}</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+st.markdown("## 👨‍💻 About Me")
+st.markdown("""
+<div class="card">
+I'm <b>Yuvraj Kumar Singh</b>, 
+            I'm Yuvraj Kumar Singh, a Computer Science graduate specializing in Artificial Intelligence and Machine Learning.
+            I enjoy building practical AI applications using Python, FastAPI, Machine Learning, and Computer Vision, 
+            and I'm currently looking for opportunities where I can continue learning while contributing to real-world projects.
+</div>
+""",unsafe_allow_html=True)
 
-st.markdown("🔗 [View All Projects on GitHub](https://github.com/yuvraj-3/Projects)")
-
-# --- Contact Me ---
-st.markdown("---")
-st.markdown("## 📫 Contact Me")
-
-st.markdown(
-    """
-    <div style='font-size:16px; line-height:2'>
-        📧 <a href="mailto:yuvrajkumarsingh303@gmail.com">yuvrajkumarsingh303@gmail.com</a><br>
-        🔗 <a href="https://github.com/yuvraj-3" target="_blank">GitHub</a><br>
-        🔗 <a href="https://www.linkedin.com/in/yuvraj5400/" target="_blank">LinkedIn</a>
-    </div>
-    """,
-    unsafe_allow_html=True
+st.download_button(
+    "📄 Download Resume",
+    open("Yuvraj_Kumar.pdf","rb").read(),
+    "Yuvraj_Kumar.pdf",
+    mime="application/pdf"
 )
 
-# --- Footer ---
+st.markdown("## 🚀 Skills")
+
+st.markdown("""
+<div style="display:flex;flex-wrap:wrap;gap:12px;">
+
+<span class="skill">🐍 Python</span>
+<span class="skill">⚡ FastAPI</span>
+<span class="skill">🤖 Machine Learning</span>
+<span class="skill">👁️ Computer Vision</span>
+<span class="skill">📊 Pandas</span>
+<span class="skill">🔢 NumPy</span>
+<span class="skill">🧠 TensorFlow</span>
+<span class="skill">📷 OpenCV</span>
+<span class="skill">🐙 Git</span>
+<span class="skill">💻 Streamlit</span>
+
+</div>
+""", unsafe_allow_html=True)
+# =========================
+# Featured Projects
+# =========================
+
+st.markdown("## 💼 Featured Projects")
+
+col1, col2 = st.columns(2, gap="large")
+
+# -------------------------
+# Cinevo AI
+# -------------------------
+with col1:
+    st.image("obj.png", use_container_width=True)
+
+    st.markdown("### 🚗 Cinevo AI")
+
+    st.write(
+        "Real-time object detection application built using "
+        "YOLOv5, OpenCV and Streamlit. Supports image, video "
+        "and webcam detection."
+    )
+
+    st.markdown("""
+    **Tech Stack**
+
+    `Python` `YOLOv5` `OpenCV` `Streamlit`
+    """)
+
+    st.link_button(
+        "💻 View Project",
+        "https://github.com/yuvraj-3/Projects/tree/main/cinevo-AI",
+        use_container_width=True
+    )
+
+# -------------------------
+# Movie Recommendation
+# -------------------------
+with col2:
+    st.image("frontend.png", use_container_width=True)
+
+    st.markdown("### 🎬 Movie Recommendation System")
+
+    st.write(
+        "Machine Learning based movie recommendation system "
+        "using content-based and collaborative filtering "
+        "to recommend similar movies."
+    )
+
+    st.markdown("""
+    **Tech Stack**
+
+    `Python` `Pandas` `Scikit-learn` `Streamlit`
+    """)
+
+    st.link_button(
+        "💻 View Project",
+        "https://github.com/yuvraj-3/Projects/tree/main/Movie%20Recommendation%20System",
+        use_container_width=True
+    )
+
 st.markdown("---")
-st.write("Made with ❤️ using [Streamlit](https://streamlit.io)")
+
+st.markdown("## 📫 Contact")
+
+a,b,c=st.columns(3)
+with a:
+    st.markdown('<div class="card">📧<br><b>Email</b><br>yuvrajkumarsingh303@gmail.com</div>',unsafe_allow_html=True)
+with b:
+    st.link_button("💻 GitHub","https://github.com/yuvraj-3")
+with c:
+    st.link_button("🔗 LinkedIn","https://www.linkedin.com/in/yuvraj5400/")
+
+st.markdown("---")
+st.markdown("<center>Made with ❤️ using Streamlit</center>",unsafe_allow_html=True)

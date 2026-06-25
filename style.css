@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+html,body,[class*="css"]{font-family:Poppins,sans-serif;}
+.hero{background:rgba(15,23,42,.75);padding:60px;border-radius:24px;backdrop-filter:blur(15px);margin:20px 0 30px;border:1px solid rgba(255,255,255,.1)}
+.hero h1{font-size:68px;color:#fff;margin:0}
+.hero span{color:#38BDF8}
+.hero h3{color:#d6d6d6}
+.hero p{color:#ececec;font-size:19px;max-width:800px}
+.stApp:before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:-1}
+.card{background:rgba(17,24,39,.72);padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.stat{background:rgba(17,24,39,.72);padding:18px;border-radius:18px;text-align:center}
+.stat h2{color:#38BDF8;margin:0}
+/* ===============================
+   PROJECT CARD
+=================================*/
+
+.project-card{
+
+    background:rgba(17,24,39,.82);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+}
+
+.project-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-top:20px;
+
+}
+
+.project-desc{
+
+    color:#D6D6D6;
+
+    font-size:18px;
+
+    margin-top:12px;
+
+}
+
+.tech{
+
+    display:inline-block;
+
+    background:#1E293B;
+
+    color:#38BDF8;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    margin:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+.skill{
+
+display:inline-block;
+
+background:#1E293B;
+
+color:#38BDF8;
+
+padding:10px 18px;
+
+margin:8px;
+
+border-radius:50px;
+
+font-weight:600;
+
+font-size:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.skill:hover{
+
+background:#2563EB;
+
+color:white;
+
+transform:translateY(-4px);
+
+}
