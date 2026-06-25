@@ -178,7 +178,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style="text-align:center;padding:20px;">
-        <h4 style="color:#38BDF8;">"To Be Is To Do"</h4>
+        <h4 style="color:#38BDF8;">"To do is to be"</h4>
         <p style="color:#B0B0B0;">
             © 2026 Yuvraj Kumar 
         </p>
