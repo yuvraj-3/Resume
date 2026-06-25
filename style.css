@@ -114,3 +114,33 @@ color:white;
 transform:translateY(-4px);
 
 }
+
+/* Force white text */
+
+html,
+body,
+p,
+span,
+div,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:white !important;
+}
+
+[data-testid="stMarkdownContainer"]{
+    color:white !important;
+}
+
+.stMarkdown{
+    color:white !important;
+}
+
+.st-emotion-cache-10trblm,
+.st-emotion-cache-1kyxreq{
+    color:white !important;
+}

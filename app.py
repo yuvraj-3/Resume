@@ -61,7 +61,7 @@ st.markdown("""
 <div class="card">
 I'm <b>Yuvraj Kumar </b>, 
             a Computer Science graduate specializing in Artificial Intelligence and Machine Learning.
-            I enjoy building practical AI applications using Python, FastAPI, Machine Learning, and Computer Vision, 
+            I enjoy building practical AI applications using Python, FastAPI, Machine Learning 
             and I'm currently looking for opportunities where I can continue learning while contributing to real-world projects.
 </div>
 """,unsafe_allow_html=True)
@@ -81,11 +81,9 @@ st.markdown("""
 <span class="skill">🐍 Python</span>
 <span class="skill">⚡ FastAPI</span>
 <span class="skill">🤖 Machine Learning</span>
-<span class="skill">👁️ Computer Vision</span>
+<span class="skill">👁️ MySQL</span>
 <span class="skill">📊 Pandas</span>
 <span class="skill">🔢 NumPy</span>
-<span class="skill">🧠 TensorFlow</span>
-<span class="skill">📷 OpenCV</span>
 <span class="skill">🐙 Git</span>
 <span class="skill">💻 Streamlit</span>
 
@@ -95,7 +93,7 @@ st.markdown("""
 # Featured Projects
 # =========================
 
-st.markdown("## 💼 Featured Projects")
+st.markdown("##  Featured Projects")
 
 col1, col2 = st.columns(2, gap="large")
 
@@ -150,18 +148,41 @@ with col2:
         "https://github.com/yuvraj-3/Projects/tree/main/Movie%20Recommendation%20System",
         use_container_width=True
     )
+st.markdown("## 📬 Let's Connect")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.link_button(
+        "📧 Email",
+        "mailto:yuvrajkumarsingh303@gmail.com",
+        use_container_width=True
+    )
+
+with col2:
+    st.link_button(
+        "💻 GitHub",
+        "https://github.com/yuvraj-3",
+        use_container_width=True
+    )
+
+with col3:
+    st.link_button(
+        "🔗 LinkedIn",
+        "https://www.linkedin.com/in/yuvraj5400/",
+        use_container_width=True
+    )
 
 st.markdown("---")
 
-st.markdown("## 📫 Contact")
-
-a,b,c=st.columns(3)
-with a:
-    st.markdown('<div class="card">📧<br><b>Email</b><br>yuvrajkumarsingh303@gmail.com</div>',unsafe_allow_html=True)
-with b:
-    st.link_button("💻 GitHub","https://github.com/yuvraj-3")
-with c:
-    st.link_button("🔗 LinkedIn","https://www.linkedin.com/in/yuvraj5400/")
-
-st.markdown("---")
-st.markdown("<center>Made with ❤️ using Streamlit</center>",unsafe_allow_html=True)
+st.markdown(
+    """
+    <div style="text-align:center;padding:20px;">
+        <h4 style="color:#38BDF8;">"To Be Is To Do"</h4>
+        <p style="color:#B0B0B0;">
+            © 2026 Yuvraj Kumar 
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
